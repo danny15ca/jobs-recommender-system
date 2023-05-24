@@ -1,0 +1,87 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h3>User Information</h3>
+      </div>
+      <div class="card-body">
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="skills">Skills:</label>
+            <textarea class="form-control" id="skills" name="skills" rows="3" [(ngModel)]="userData.user_skills"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="education">Education:</label>
+            <textarea class="form-control" id="education" name="education" rows="3" [(ngModel)]="userData.user_education_level"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="experience">Experience:</label>
+            <textarea class="form-control" id="experience" name="experience" rows="3" [(ngModel)]="userData.user_experience_level"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="experience">Number of Relevant Jobs:</label>
+            <!-- <textarea class="form-control" id="top_k" name="top_k" rows="3" [(ngModel)]="userData.top_k"></textarea> -->
+            <select class="form-select" aria-label="Default select example" id="top_k" name="top_k" [(ngModel)]="userData.top_k">
+              <option selected>Open this select menu</option>
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Modal -->
+        <div
+          class="modal"
+          tabindex="-1"
+          role="dialog"
+          [ngStyle]="{'display':displayStyle}">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Warning</h4>
+              </div>
+              <div class="modal-body">
+                <p #errorMessage>Please select a valid number of recommended jobs.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" 
+                        (click)="closePopup()">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="recommendedJobs != null">
+        <h3 class="mt-5">Recommended Jobs:</h3>
+      
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item" *ngFor="let job of recommendedJobs.jobs; let i=index">
+                <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" [attr.aria-controls]="'collapse'+i">
+                    {{ job.title }}
+                </button>
+                </h2>
+                <div [attr.id]="'collapse'+i" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="list-group">
+                        <a *ngFor="let item of job.postings; let j = index"
+                            [ngClass]="{'active': j == 0}"
+                            href="{{ item.p_href }}"
+                            class="list-group-item list-group-item-action"
+                            target="_blank">
+                            {{ item.p_title }}
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>

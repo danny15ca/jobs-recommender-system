@@ -1,0 +1,85 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+    .card {
+        border: none;
+      
+        .card-header {
+            background-color: #007F4F;
+            color: #fff;
+            border-bottom: 1px solid #dee2e6;
+            padding: 15px;
+            
+            h3 {
+                margin: 0;
+                font-size: 24px;
+            }
+        }
+      
+        .card-body {
+            padding: 30px;
+        
+            form {
+                label {
+                    font-weight: 600;
+                }
+            
+                .form-group {
+                    margin-bottom: 30px;
+                }
+            
+                textarea {
+                    resize: none;
+                }
+            }
+
+            .modal-header {
+                background-color: #FF7900;
+                color: #fff;
+                font-weight: 600;
+            }
+        
+            button[type="submit"] {
+                background-color: #007F4F;
+                border-color: #007F4F;
+                font-weight: 600;
+            
+                &:hover {
+                    background-color: darken(#2ECC71, 10%);
+                    // border-color: #0062cc;
+                }
+            }
+        }
+    }
+    
+    *ngIf {
+        h3 {
+            margin-top: 50px;
+            font-size: 24px;
+        }
+      
+        .list-group {
+            margin-top: 20px;
+            border-radius: 0;
+        
+            .list-group-item {
+                padding: 10px 15px;
+                font-size: 18px;
+                border: none;
+                border-bottom: 1px solid #dee2e6;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .list-group-item.active {
+        background-color: #007F4F;
+        border-color: #007F4F;
+    }
+}
+  

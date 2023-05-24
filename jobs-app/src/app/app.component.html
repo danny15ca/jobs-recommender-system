@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm navbar-light customized-bg-color">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">Jobs Recommendation System</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/signIn" routerLinkActive="active" *ngIf="!isAuthenticated">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/jobs" routerLinkActive="active" *ngIf="isAuthenticated">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="" (click)="signOut()" *ngIf="isAuthenticated">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

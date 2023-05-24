@@ -1,0 +1,40 @@
+.card {
+    max-width: 25rem;
+    margin: 0 auto;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    
+    .card-header {
+      background-color: #007F4F; // Green color
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 1rem;
+      border-bottom: none;
+    }
+    
+    .card-body {
+      padding: 2rem;
+      
+      h5 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .btn-primary {
+        background-color: #007F4F; // Green color
+        border: none;
+        &:hover {
+          background-color: darken(#2ECC71, 10%);
+        }
+      }
+    }
+}
+  

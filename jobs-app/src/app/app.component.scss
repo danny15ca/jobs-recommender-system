@@ -1,0 +1,64 @@
+.customized-bg-color {
+    background-color: #00B16A; /* Replace with your desired blue color */
+    color: white; /* Set font color to white to improve contrast */
+}
+
+.navbar {
+    // background-color: #2c3e50; // set background color to a nice blue shade
+    // color: #fff; // set font color to white
+    font-size: 1.2rem; // increase font size slightly
+    padding: 1rem 0; // add some top and bottom padding
+
+    .navbar-brand {
+        font-size: 1.5rem; // increase font size for branding link
+        font-weight: bold; // make branding link bold
+        margin-right: 2rem; // add some right margin to branding link
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem; // add some padding to each link
+        transition: all 0.2s ease-in-out; // add a smooth transition effect when links are hovered over
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1); // add a slight white background color when links are hovered over
+        }
+
+        &.active {
+            background-color: rgba(255, 255, 255, 0.2); // add a slightly stronger white background color to the active link
+        }
+    }
+
+    .navbar-toggler {
+        border: none; // remove the default border from the toggle button
+        color: #fff; // set the color of the toggle button to white
+        font-size: 1.5rem; // increase the size of the toggle button icon
+        padding: 0.5rem; // add some padding to the toggle button
+    }
+}
+
+nav {
+    margin-bottom: 20px;
+}
+  
+.container {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        .navbar-nav {
+            flex-direction: column; // change the direction of the navbar links to vertical when the screen is smaller
+        }
+
+        .nav-link {
+            border-radius: 0.25rem; // add some rounded corners to the links to make them look like buttons
+            margin-bottom: 0.5rem; // add some bottom margin to each link
+        }
+
+        .navbar-toggler {
+            margin-top: 1rem; // add some top margin to the toggle button to separate it from the links
+        }
+    }
+}
+  
